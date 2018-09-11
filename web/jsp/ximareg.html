@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2018西马报名</title>
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
+	<link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../css/style.css"> <!-- Resource style -->
+	<script src="../js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="../js/jquery-2.1.1.js"></script>
+	<script src="../js/main.js"></script> <!-- Resource jQuery -->
+</head>
+<body>
+	<div class="container">
+
+		<form class="cd-form floating-labels">
+			<fieldset>
+				<legend>报名信息</legend>
+
+				<div class="error-message">
+					<p>请输入有效的身份证及手机号</p>
+				</div>
+
+				<div class="icon">
+					<label class="cd-label" for="cd-name">姓名</label>
+					<input class="user" type="text" name="cd-name" id="cd-name" required>
+			    </div> 
+
+			    <div class="icon">
+			    	<label class="cd-label" for="cd-company">身份证</label>
+					<input class="company" type="text" name="cd-company" id="cd-company" required>
+			    </div> 
+
+			    <div class="icon">
+			    	<label class="cd-label" for="cd-email">手机号码</label>
+					<input class="company" type="text" name="cd-phone" id="cd-phone" required>
+			    </div>
+
+				 <div class="icon">
+			    	<label class="cd-label" for="cd-company">客户经理工号</label>
+					<input class="company" type="text" name="cd-company" id="cd-company" required>
+			    </div>
+			</fieldset>
+
+			<fieldset>
+				<legend>参加项目</legend>
+
+				<div>
+					
+
+					<p class="cd-select icon">
+						<select class="budget">
+							<option value="0">选择项目</option>
+							<option value="1">10000米</option>
+							<option value="2">半   马</option>
+							<option value="3">全   马</option>
+						</select>
+					</p>
+				</div> 
+
+				<div>
+					<h4>性  别</h4>
+
+					<ul class="cd-form-list">
+						<li>
+							<input type="radio" name="radio-button" id="cd-radio-1" checked>
+							<label for="cd-radio-1">男</label>
+						</li>
+							
+						<li>
+							<input type="radio" name="radio-button" id="cd-radio-2">
+							<label for="cd-radio-2">女</label>
+						</li>
+
+						
+					</ul>
+				</div>
+
+				<div>
+					<h4>衣服尺码</h4>
+
+					<ul class="cd-form-list">
+						<li>
+							<input type="radio"  name="radio-button2" id="cd-checkbox-1">
+							<label for="cd-checkbox-1">S</label>
+						</li>
+
+						<li>
+							<input type="radio"  name="radio-button2" id="cd-checkbox-2">
+							<label for="cd-checkbox-2">M</label>
+						</li>
+
+						<li>
+							<input type="radio" name="radio-button2" id="cd-checkbox-3">
+							<label for="cd-checkbox-3">XL</label>
+						</li>
+
+						<li>
+							<input type="radio" name="radio-button2" id="cd-checkbox-4">
+							<label for="cd-checkbox-4">XXL</label>
+						</li>
+					</ul>
+				</div>
+
+				
+				<div>
+			      	<input type="submit" value="提交报名">
+			    </div>
+			</fieldset>
+		</form>
+	</div>
+
+    <script>
+	function requestByJson() {
+	var name=$("#username").val();
+	var psd=$("#password").val();
+	var userJson={"username":name,"password":psd};
+	$.ajax({
+
+	type : 'post',
+
+	url : 'ajaxgetUser.do',
+	// contentType : "application/json",              //发送至服务器的类型
+	// dataType : "json",                                     //预期服务器返回类型
+	data : userJson,
+
+	success : function(result) {
+	//
+	for(var i=0;i<=result.length;i++)
+	{
+	alert(result[i].userId+result[i].username+result[i].age+result[i].password);
+	}
+	alert(result);
+
+	}
+
+	});
+
+	}
+
+    </script>
+	
+</body>
+</html>

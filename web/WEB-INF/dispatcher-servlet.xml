@@ -12,6 +12,7 @@
     <context:component-scan base-package="zxq.springmvc"/>
 
     <mvc:resources mapping="/resources/**" location="/resources/" />
+
 <!--如果不使用注解驱动<mvc:annotation-driven />，就需要给处理器适配器配置json转换器-->
     <mvc:annotation-driven ></mvc:annotation-driven>
 

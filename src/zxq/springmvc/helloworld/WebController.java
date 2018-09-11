@@ -14,6 +14,6 @@ public class WebController {
     }
     @RequestMapping(value = "/finalPage.do", method = RequestMethod.GET)
     public String finalPage() {
-        return "/user_info";
+        return "/user_reg";
     }
 }

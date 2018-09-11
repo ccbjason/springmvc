@@ -56,15 +56,16 @@ List<UserInfo> ajaxUser(UserInfo userxx)
       System.out.println("username:"+userxx.getUsername()+"----password:"+userxx.getPassword());
       logger.info("username:"+userxx.getUsername()+"----password:"+userxx.getPassword());
         //模拟调用service-dao
-      UserInfo user1=new UserInfo(1,userxx.getUsername(),11,userxx.getPassword());
-        UserInfo user2=new UserInfo(2,"bb",22,"b2222");
-        UserInfo user3=new UserInfo(3,"cc",33,"c3333");
-        UserInfo user4=new UserInfo(4,"dd",44,"d444");
+
+      UserInfo user1=new UserInfo(1,userxx.getUsername(),userxx.getUserId(),userxx.getPassword(),userxx.getCardid(),userxx.getSex(),userxx.getClsize(),userxx.getEmpno(),userxx.getPhone(),userxx.getRuntype());
+//        UserInfo user2=new UserInfo(2,userxx.getCardid(),0,userxx.getClsize());
+//        UserInfo user3=new UserInfo(3,userxx.getEmpno(),0,userxx.getRuntype());
+//        UserInfo user4=new UserInfo(4,userxx.getPhone(),0,"--");
         List<UserInfo> users = new ArrayList<>();
         users.add(user1);
-        users.add(user2);
-        users.add(user3);
-        users.add(user4);
+//        users.add(user2);
+//        users.add(user3);
+//        users.add(user4);
 
         return  users;
     }
