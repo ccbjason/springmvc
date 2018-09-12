@@ -18,7 +18,7 @@ public class JsonSource {
 
     @RequestMapping("/testJson6")
     public String testJson6(@RequestBody List<UserInfo> persons) {
-        System.out.println("persons:" + persons);
+        System.out.println("persons2222:" + persons);
         return "success";
     }
 }
